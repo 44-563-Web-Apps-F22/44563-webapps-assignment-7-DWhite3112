@@ -23,40 +23,81 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot0" onclick= "check(0)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot1" onclick= "check(1)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot2" onclick= "check(2)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot3" onclick= "check(3)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot4" onclick= "check(4)"><img src="chest.jpg" height=100 width=100></div>
   </div>
   <div class="row">
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot5" onclick= "check(5)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot6" onclick= "check(6)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot7" onclick= "check(7)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot8" onclick= "check(8)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot9" onclick= "check(9)"><img src="chest.jpg" height=100 width=100></div>
   </div>
   <div class="row">
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot10" onclick= "check(10)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot11" onclick= "check(11)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot12" onclick= "help()"></div>
+    <div class="col" id="slot13" onclick= "check(13)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot14" onclick= "check(14)"><img src="chest.jpg" height=100 width=100></div>
   </div>
   <div class="row">
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot15" onclick= "check(15)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot16" onclick= "check(16)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot17" onclick= "check(17)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot18" onclick= "check(18)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot19" onclick= "check(19)"><img src="chest.jpg" height=100 width=100></div>
   </div>
   <div class="row">
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
-    <div class="col-sm"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot20" onclick= "check(20)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot21" onclick= "check(21)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot22" onclick= "check(22)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot23" onclick= "check(23)"><img src="chest.jpg" height=100 width=100></div>
+    <div class="col" id="slot24" onclick= "check(24)"><img src="chest.jpg" height=100 width=100></div>
   </div>
+  <script >
+    
+  var ids = ["slot0","slot1","slot2","slot3","slot4","slot5","slot6","slot7","slot8","slot9","slot10","slot11",
+  "slot12","slot13","slot14","slot15","slot16","slot17","slot18","slot19","slot20","slot21",
+  "slot22","slot23","slot24"]
+  var chestCount = 0
+  var score = 0
+  var lastCheck = 12
+  var treasureLocation = 18
+
+  function check(position) {
+    
+    
+    var picid = ids[position]
+    if (treasureLocation == position) {
+       position.src = "gold.jpg"
+      chestCount += 1
+      score += 1 
+      document.getElementById("chest").innerHTML = "Number of chest checked is " + chestCount
+      document.getElementById("score").innerHTML = "Score is " + score
+      lastCheck = position
+    } else {
+      position.src = "C:\Users\s520951\Desktop\webapps-repos\44563-webapps-assignment-7-DWhite3112\dirt.jpg"
+      chestCount += 1
+      score -= 1 
+      document.getElementById("chest").innerHTML = "Number of chest checked is " + chestCount
+      document.getElementById("score").innerHTML = "Score is " + score
+      lastCheck = position
+    }
+    function help(){
+      var rowlast = lastCheck / 5
+      var collast = lastCheck % 5
+      score += 2
+      document.getElementById("score").innerHTML = "Score is " + score
+      if (condition) {
+        
+      }
+    }
+    
+  }
+  </script>
  
 
 </div> 
